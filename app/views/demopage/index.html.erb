@@ -1,12 +1,29 @@
-<h1>Demopage#index</h1>
-<p>Find me in app/views/demopage/index.html.erb</p>
-
-<% unless current_user %>
-  <%= button_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, method: :post %>
-<% else %>
-  <%= image_tag current_user[:image] %><br>
-  <%= 'Name: ' + current_user[:name] %><br>
-  <%= 'UID: ' + current_user[:uid] %><br>
-  <%= 'Email: ' + current_user[:email] %><br>
-  <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
-<% end %>
+<div class="container">
+  <div class="p-4 p-md-5 mb-4">
+    <div class="col-md-6 px-0">
+      <h1>Facebook OAuth2 Strategy for OmniAuth.</h1>
+      <p>Implementing Facebook-OmniAuth with Devise & ActiveAdmin for Rails 6 app</p>
+      <% unless current_user %>
+        <%= button_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, method: :post %>
+      <% else %>
+            <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+              <div class="card-header">Information</div>
+              <div class="card-body">
+                <h5 class="card-title">Your Facebook Profile</h5>
+                <%= image_tag current_user[:image] %>
+                  <p class="card-text">
+                    <%= 'Name: ' + current_user[:name] %>
+                  </p>
+                  <p class="card-text">
+                    <%= 'UID: ' + current_user[:uid] %>
+                  </p>
+                  <p class="card-text">
+                    <%= 'Email: ' + current_user[:email] %>
+                  </p>
+                <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+      <% end %>
+              </div>
+            </div>
+    </div>
+  </div>
+</div>
