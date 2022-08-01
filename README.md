@@ -28,5 +28,3 @@ Now you can log into the admin panel with these credentials:
 email: admin@example.com, password: password
 ```
 Don't forget to change your login information.
-
-[Demo](https://omniauth-facebook-demo.herokuapp.com).
